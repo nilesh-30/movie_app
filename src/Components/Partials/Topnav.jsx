@@ -22,7 +22,7 @@ const Topnav = () => {
     },[query])
 
   return (
-    <div className='text-white w-full h-[10vh] bg-[#121212] flex items-center justify-start gap-2 pl-[20%]'>
+    <div className='text-white w-full h-[10vh] relative bg-[#121212] flex items-center justify-start gap-2 pl-[20%]'>
             <i className='ri-search-line'></i>
             <input onChange={(e) => setquery(e.target.value)} value={query} className='rounded-lg px-2 bg-transparent border-[1px]' type="text" placeholder='Search'/>
             {query.length > 0 && (
@@ -32,7 +32,7 @@ const Topnav = () => {
             <div className='absolute w-[40vw] max-h-[50vh] flex flex-col gap-2 bg-zinc-900 top-24 rounded-lg overflow-auto'>
                 {searches.map((items,index) => (
                     <Link key={index} className='flex gap-3 p-2 text-lg px-4'>
-                        <img className='w-12 h-12 rounded-md object-cover grayscale-0' src={items.backdrop_path || items.profile_path ? `https://image.tmdb.org/t/p/original/${items.backdrop_path || items.profile_path}` : defaultImage} alt="" />
+                        <img className='w-12 h-12 rounded-md object-cover' src={items.backdrop_path || items.profile_path ? `https://image.tmdb.org/t/p/original/${items.backdrop_path || items.profile_path}` : defaultImage} alt="" />
                         <span className='flex items-center justify-center'>{items.original_title || items.title || items.name || items.original_name}</span>
                     </Link>
 

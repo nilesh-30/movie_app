@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Sidenav = () => {
   return (
-    <div className='flex flex-col text-white w-48 bg-[#121212] border-r border-zinc-600 h-screen p-6'>
+    <div className='flex flex-col text-white w-[12%] bg-[#121212] border-r border-zinc-600 h-screen p-6'>
         <div className='flex gap-3 mb-16'>
             <i className='ri-tv-fill'></i>
             <h1>Amazon Crime</h1>
