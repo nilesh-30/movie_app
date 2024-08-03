@@ -1,20 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Cards = ({ data }) => {
+const Cards = ({ data, title }) => {
   return (
-    <div className='text-white w-full p-5'>
-        <h1 className='text-3xl font-semibold text-zinc-400 mb-5'>Trending</h1>
+    <div className='flex flex-wrap items-center justify-center'>
+      {data.map((item, index) => (
+        <Link className='w-[14vw] mb-[5%] mr-[5%]' key={index}>
+          <img className='h-[40vh] object-cover rounded-lg' src={`https://image.tmdb.org/t/p/original/${item.backdrop_path || item.poster_path}`} alt="Cards" />
 
-        <div className='w-full flex overflow-auto'>
-            {data.map((item,index) => (
-                <div key={index} className='relative min-w-[16%] h-[35vh] mr-7'>
-                    <div className='leading-4 transform -rotate-90 origin-top-left absolute bottom-0 left-2 font-semibold text-lg'>{item.title || item.name || item.original_name || item.original_title}</div>
-
-                    <img className='absolute right-0 w-[85%] h-full object-cover rounded-lg' src={`https://image.tmdb.org/t/p/original${item.backdrop_path || item.poster_path}`} alt="" />
-
-                </div>
-            ))}
-        </div>
+          <h1 className='font-semibold mt-3 text-white'>{item.name || item.title || item.original_name || item.original_title}</h1>
+        </Link>
+      ))}
     </div>
   )
 }
