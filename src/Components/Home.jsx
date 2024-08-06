@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from '../utils/axios';
 import Topnav from './Partials/Topnav';
 import Header from './Partials/Header';

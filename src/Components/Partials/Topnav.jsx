@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "../../utils/axios";
 import defaultImage from '../../assets/noimage.png'
@@ -32,7 +32,7 @@ const Topnav = () => {
     }, [query])
 
     return (
-        <>
+        <div className='fixed top-0 w-full h-[10vh] z-40'>
             <Sidenav isOpen={isSideNavOpen} onClose={closeSideNav} />
             <div className='text-white w-full h-[10vh] relative bg-[#121212] flex items-center justify-start gap-2 pl-5'>
                 <i onClick={toggleSideNav} className="ri-menu-line pl-4 cursor-pointer"></i>
@@ -55,7 +55,7 @@ const Topnav = () => {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
